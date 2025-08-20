@@ -71,12 +71,12 @@ spec:
           securityContext:
             readOnlyRootFilesystem: false
             allowPrivilegeEscalation: true
-            # runAsNonRoot: true
+             runAsNonRoot: true
             runAsUser: 1
-            privileged: true
+            privileged: false
             capabilities:
-              # drop:
-                # - all
+              drop:
+               - all
               add:
                 - CAP_SYS_ADMIN
       volumes:
@@ -85,5 +85,5 @@ spec:
             path: /dev/
         - name: dockersock
           hostPath:
-            path: /var/run/docker.sock  
+            path: 
             
